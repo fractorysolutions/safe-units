@@ -18,7 +18,11 @@ export const hectares: Area = Measure.of(10000, meters.squared(), "ha");
 export const liters: Volume = Measure.of(0.001, meters.cubed(), "L");
 
 // Velocity
-export const speedOfLight: Velocity = Measure.of(299_792_458, meters.per(seconds), "C");
+export const speedOfLight: Velocity = Measure.of(
+  299_792_458,
+  meters.per(seconds),
+  "C",
+);
 
 // Pressure
 export const bars: Pressure = Measure.of(100_000, pascals, "bar");

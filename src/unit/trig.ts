@@ -52,15 +52,19 @@ export const tan = wrapTrigFn(Math.tan);
  * @returns an angle
  */
 export function atan2(y: Length, x: Length): PlaneAngle {
-    return Measure.of(Math.atan2(y.value, x.value), radians);
+  return Measure.of(Math.atan2(y.value, x.value), radians);
 }
 
-type Dimensionless = GenericMeasure<number, {}>;
+type Dimensionless = GenericMeasure<number, Record<string, never>>;
 
-function wrapTrigFn(f: (x: number) => number): (angle: PlaneAngle) => Dimensionless {
-    return angle => Measure.dimensionless(f(angle.value));
+function wrapTrigFn(
+  f: (x: number) => number,
+): (angle: PlaneAngle) => Dimensionless {
+  return (angle) => Measure.dimensionless(f(angle.value));
 }
 
-function wrapInverseTrigFn(f: (x: number) => number): (angle: Dimensionless) => PlaneAngle {
-    return angle => Measure.of(f(angle.value), radians);
+function wrapInverseTrigFn(
+  f: (x: number) => number,
+): (angle: Dimensionless) => PlaneAngle {
+  return (angle) => Measure.of(f(angle.value), radians);
 }

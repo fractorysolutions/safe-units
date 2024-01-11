@@ -65,5 +65,5 @@ function genCurriedTableName(spec: OperatorSpec, left: ExponentSpec): string {
 }
 
 function indent(line: string): string {
-    return "    " + line;
+    return `    ${  line}`;
 }

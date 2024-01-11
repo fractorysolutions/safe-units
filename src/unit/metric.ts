@@ -1,25 +1,59 @@
 import { PrefixFn } from "../measure/genericMeasureUtils";
 import { Measure } from "../measure/numberMeasure";
-import { amperes, candelas, kilograms, meters, moles, seconds, steradians } from "./base";
+import {
+  amperes,
+  candelas,
+  kilograms,
+  meters,
+  moles,
+  seconds,
+  steradians,
+} from "./base";
 import * as Quantity from "./quantities";
 
 export const hertz: Quantity.Frequency = seconds.inverse().withSymbol("Hz");
-export const newtons: Quantity.Force = kilograms.times(meters.per(seconds.squared())).withSymbol("N");
-export const pascals: Quantity.Pressure = newtons.per(meters.squared()).withSymbol("Pa");
+export const newtons: Quantity.Force = kilograms
+  .times(meters.per(seconds.squared()))
+  .withSymbol("N");
+export const pascals: Quantity.Pressure = newtons
+  .per(meters.squared())
+  .withSymbol("Pa");
 export const joules: Quantity.Energy = newtons.times(meters).withSymbol("N");
 export const watts: Quantity.Power = joules.per(seconds).withSymbol("J");
 export const volts: Quantity.Voltage = watts.per(amperes).withSymbol("V");
-export const coulombs: Quantity.ElectricCharge = amperes.times(seconds).withSymbol("C");
-export const farads: Quantity.ElectricalCapacitance = coulombs.per(volts).withSymbol("F");
-export const ohms: Quantity.ElectricalResistance = volts.per(amperes).withSymbol("Ω");
-export const siemens: Quantity.ElectricalConductance = amperes.per(volts).withSymbol("S");
-export const henrys: Quantity.ElectricalInductance = ohms.times(seconds).withSymbol("H");
-export const webers: Quantity.MagneticFlux = joules.per(amperes).withSymbol("Wb");
-export const teslas: Quantity.MagneticFluxDensity = volts.times(seconds.per(meters.squared())).withSymbol("T");
-export const sieverts: Quantity.RadiationDose = joules.per(kilograms).withSymbol("Sv");
-export const katals: Quantity.CatalyticActivity = moles.per(seconds).withSymbol("kat");
-export const lumens: Quantity.LuminousFlux = candelas.times(steradians).withSymbol("lm");
-export const luxes: Quantity.Illuminance = lumens.per(meters.squared()).withSymbol("lx");
+export const coulombs: Quantity.ElectricCharge = amperes
+  .times(seconds)
+  .withSymbol("C");
+export const farads: Quantity.ElectricalCapacitance = coulombs
+  .per(volts)
+  .withSymbol("F");
+export const ohms: Quantity.ElectricalResistance = volts
+  .per(amperes)
+  .withSymbol("Ω");
+export const siemens: Quantity.ElectricalConductance = amperes
+  .per(volts)
+  .withSymbol("S");
+export const henrys: Quantity.ElectricalInductance = ohms
+  .times(seconds)
+  .withSymbol("H");
+export const webers: Quantity.MagneticFlux = joules
+  .per(amperes)
+  .withSymbol("Wb");
+export const teslas: Quantity.MagneticFluxDensity = volts
+  .times(seconds.per(meters.squared()))
+  .withSymbol("T");
+export const sieverts: Quantity.RadiationDose = joules
+  .per(kilograms)
+  .withSymbol("Sv");
+export const katals: Quantity.CatalyticActivity = moles
+  .per(seconds)
+  .withSymbol("kat");
+export const lumens: Quantity.LuminousFlux = candelas
+  .times(steradians)
+  .withSymbol("lm");
+export const luxes: Quantity.Illuminance = lumens
+  .per(meters.squared())
+  .withSymbol("lx");
 
 // HACKHACK: Explicitly type this so we can import PrefixFunction and avoid absolute paths in the generated typings.
 export const yotta: PrefixFn = Measure.prefix("Y", 1e24);

@@ -10,7 +10,11 @@ export const points: Length = Measure.of(352.778, micro(meters), "p");
 export const picas: Length = Measure.of(12, points, "pica");
 
 // Liquid volume
-export const minims: Volume = Measure.of(61.611_519_921_875, micro(liters), "min");
+export const minims: Volume = Measure.of(
+  61.611_519_921_875,
+  micro(liters),
+  "min",
+);
 export const fluidDrams: Volume = Measure.of(60, minims, "fl dr");
 export const teaspoons: Volume = Measure.of(80, minims, "tsp");
 export const tablespoons: Volume = Measure.of(3, teaspoons, "Tbsp");
@@ -26,7 +30,11 @@ export const oilBarrels: Volume = Measure.of(42, gallons, "bbl");
 export const hogsheads: Volume = Measure.of(63, gallons, "hogshead");
 
 // Dry volume
-export const dryPints: Volume = Measure.of(0.550_610_471_3575, liters, "dry pt");
+export const dryPints: Volume = Measure.of(
+  0.550_610_471_3575,
+  liters,
+  "dry pt",
+);
 export const dryQuarts: Volume = Measure.of(2, dryPints, "dry qt");
 export const dryGallons: Volume = Measure.of(4, dryQuarts, "dry gal");
 export const pecks: Volume = Measure.of(2, dryGallons, "pk");
