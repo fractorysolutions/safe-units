@@ -56,7 +56,10 @@ export function atan2(y: Length, x: Length): PlaneAngle {
   return Measure.of(Math.atan2(y.value, x.value), radians);
 }
 
-type Dimensionless = GenericMeasure<number, Record<never, Exponent | undefined>>;
+type Dimensionless = GenericMeasure<
+  number,
+  Record<never, Exponent | undefined>
+>;
 
 function wrapTrigFn(
   f: (x: number) => number,

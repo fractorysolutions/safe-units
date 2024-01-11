@@ -9,7 +9,7 @@ import * as Base from "./base";
 export type Dimensionless<N = number> = LiftMeasure<typeof Dimensionless, N>;
 export const Dimensionless: GenericMeasure<
   number,
-  Record<never, Exponent|undefined>
+  Record<never, Exponent | undefined>
 > = Measure.dimensionless(1);
 
 // Base units

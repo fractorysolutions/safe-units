@@ -55,7 +55,7 @@ export type DivisorUnit<U extends Unit> =
 
 /** Returns the unit raised to a power. This is the scalar multiple of the dimension vector. */
 export type ExponentiateUnit<U extends Unit, N extends Exponent> = "0" extends N
-  ? Record<never, Exponent|undefined>
+  ? Record<never, Exponent | undefined>
   : { [Dim in keyof U]: MultiplyExponents<GetExponent<U, Dim>, N> };
 
 /** Returns the union of exponents to which a given unit is allowed to be raised.  */

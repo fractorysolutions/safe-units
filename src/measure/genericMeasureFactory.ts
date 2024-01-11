@@ -34,7 +34,9 @@ interface GenericMeasureFactory<N> {
    * @param value the value of the measure
    * @returns a measure with no dimensions
    */
-  dimensionless(value: N): GenericMeasure<N, Record<never, Exponent|undefined>>;
+  dimensionless(
+    value: N,
+  ): GenericMeasure<N, Record<never, Exponent | undefined>>;
 
   /**
    * Creates a measure as a multiple of another measure.
