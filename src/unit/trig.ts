@@ -1,3 +1,4 @@
+import { Exponent } from "../exponent";
 import { GenericMeasure } from "../measure/genericMeasure";
 import { Measure } from "../measure/numberMeasure";
 import { radians } from "./base";
@@ -55,7 +56,7 @@ export function atan2(y: Length, x: Length): PlaneAngle {
   return Measure.of(Math.atan2(y.value, x.value), radians);
 }
 
-type Dimensionless = GenericMeasure<number, Record<string, never>>;
+type Dimensionless = GenericMeasure<number, Record<never, Exponent | undefined>>;
 
 function wrapTrigFn(
   f: (x: number) => number,
