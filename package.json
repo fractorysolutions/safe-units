@@ -9,7 +9,7 @@
         "typescript",
         "typesafe"
     ],
-    "version": "1.2.2",
+    "version": "1.2.3",
     "license": "MIT",
     "homepage": "https://github.com/fractorysolutions/safe-units",
     "bugs": "https://github.com/fractorysolutions/safe-units/issues",
